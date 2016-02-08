@@ -1,0 +1,20 @@
+{% load django_markdown %}
+{% load staticfiles %}
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+</head>
+<body >
+	<div class='forms' style='float:left;position:fixed;height:100%;border-right:1px solid;padding:2px 25px 2px 5px;margin-top:-10px;z-index:5;box-shadow:5px 0px 5px #999;width:30%;'>
+		<form action="/search/" method="post">
+		    {% csrf_token %}
+		    {{ form.as_p }}
+		    <input type="submit" value="Submit" />
+		</form>
+		<input type='button' id='screenshot' name='screenshot' value='Take ScreenShot'/>
+	</div>
+	
+</body>
