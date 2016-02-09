@@ -1,4 +1,4 @@
-# YouTube Reviews using YouTube data api
+# YouTube Reviews from YouTube data api
 Step 1:
   Created a function ('youtube_search') to get the response from the YouTube based on the query we've given. This api uses google-api-client. This youtube_search function will take two parameters namely 'product name' and 'max results' and it will return the response including the details like videoID, Title, Date Posted, Description etc..
   
