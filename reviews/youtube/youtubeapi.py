@@ -16,7 +16,8 @@ def youtube_search(query,maxResults):
     q=query,
     part="id,snippet",
     maxResults=maxResults,
-    type='video'
+    type='video',
+    order='rating'
   ).execute()
 
   videos = []
@@ -24,8 +25,8 @@ def youtube_search(query,maxResults):
     if search_result["id"]["kind"] == "youtube#video":
       video_details = {}
       video_details['id'] = search_result['id']['videoId']
+      video_details['image_url'] = search_result['snippet']['thumbnails']['high']['url']
       video_details['title'] = search_result['snippet']['title']
-      # print search_result['snippet']['description']
       video_details['description'] = search_result['snippet']['description']
       video_details['publisher'] = search_result['snippet']['channelTitle']
       video_details['date_published'] = search_result['snippet']['publishedAt']
